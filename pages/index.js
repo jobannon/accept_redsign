@@ -1,209 +1,81 @@
-import Head from 'next/head'
-
-export default function Home() {
+function BangEquals() {
   return (
-    <div className="container">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
+     <style jsx>{`
+       html {
+        scroll-behavior: smooth;
+       }
+       .bottom_text {
+         color: gray;
+        text-align: center;
+         font-family: Sans-serif; 
+       }
+       .flex-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+      .flex-container > div {
+        margin: 10px;
+        padding: 20px;
+        font-size: 30px;
+      }
+      .header {
+        padding: 10vH;
+        background-color: #448FA3;
+      }
+      .body-middle {
+        background-color: #D6D6D6;
+        padding: 2vH;
+      }
+      .reveal {
+        background-color: #C2C6A7;
+        padding: 1vH;
+      }
+      .flex-container > .noPadding {
+        padding: 0px;
+        margin: 30px;
+      }
+      .flex-container-column > .centerOf {
+        align-items: center;
+        justify-content: center;
+      }
 
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-        </a>
-      </footer>
-
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
+    `}</style>
+    <div className="header flex-container" >
+      this is header 
     </div>
+
+    <div className="flex-container body-middle">
+      <svg height="350" width="350">
+          <path fill d="M172.8,0C77.364,0,0,77.365,0,172.8c0,95.435,77.364,172.8,172.8,172.8
+        c95.433,0,172.798-77.365,172.798-172.8C345.598,77.365,268.232,0,172.8,0z M80.25,69.387h33.533v128.877H80.25V69.387z
+         M95.967,275.8c-12.153,0-22.001-9.854-22.001-22.007c0-12.147,9.848-22.002,22.001-22.002c12.153,0,22.001,9.854,22.001,22.002
+        C117.968,265.946,108.12,275.8,95.967,275.8z M284.645,220.011h-128.87v-33.533h128.87V220.011L284.645,220.011z M284.645,155.566
+        h-128.87v-33.532h128.87V155.566L284.645,155.566z"></path>
+        </svg>
+      <div className="noPadding" ><img src="noun_plus.png" height="100"/></div>
+      <div className="noPadding"><img src="/joshprofile_circle.png" height='350'/></div>
+    </div>
+    <div className="flex-container-column centerOf reveal"> 
+      <a href="#down" className="flex-container-column centerOf reveal"> 
+        <img src="/angle-arrow-down.png" height='50'></img>
+      </a>
+          <div id="down" >
+            <img src="/confetti.png" height='100'/>
+            <img src="/balloons.png" height='100'/>
+
+            <div>
+              <p>I accept your offer!</p>  
+              <p>Super exited to get to work together!</p>  
+              <p>Thanks for taking the time to answer my questions and sharing your work!</p> 
+            </div>
+          </div>
+    </div>
+    </>
   )
 }
+
+export default BangEquals
+
